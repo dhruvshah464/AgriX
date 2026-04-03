@@ -1,0 +1,11 @@
+region_id,season,year,crop,rainfall_mm,temperature_c,soil_ph,nitrogen,phosphorus,potassium,latitude,longitude,yield_tph
+delhi-ncr,kharif,2022,rice,180,30.1,6.4,82,46,54,28.63,77.21,4.1
+delhi-ncr,rabi,2022,wheat,72,21.2,6.8,75,42,48,28.63,77.21,3.6
+punjab-central,kharif,2022,rice,205,31.3,6.5,88,49,58,30.90,75.85,4.6
+punjab-central,rabi,2022,wheat,64,20.3,7.0,79,40,44,30.90,75.85,4.2
+haryana-west,kharif,2022,maize,132,29.0,6.7,70,38,42,29.05,76.08,3.4
+haryana-west,rabi,2022,wheat,58,19.4,7.1,68,36,40,29.05,76.08,3.2
+up-east,kharif,2022,rice,210,30.8,6.2,90,52,61,26.85,80.95,4.8
+up-east,rabi,2022,potato,74,18.7,6.1,72,45,47,26.85,80.95,3.7
+bihar-north,kharif,2022,rice,220,31.0,6.3,86,50,60,25.62,85.13,4.9
+bihar-north,rabi,2022,wheat,80,19.9,6.6,77,43,49,25.62,85.13,3.9

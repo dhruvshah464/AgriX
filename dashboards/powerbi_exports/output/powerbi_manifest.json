@@ -1,0 +1,38 @@
+{
+  "tables": [
+    {
+      "name": "crop_productivity_trends",
+      "path": "dashboards/powerbi_exports/output/crop_productivity_trends.csv"
+    },
+    {
+      "name": "rainfall_correlation_observations",
+      "path": "dashboards/powerbi_exports/output/rainfall_correlation_observations.csv"
+    },
+    {
+      "name": "rainfall_correlation_summary",
+      "path": "dashboards/powerbi_exports/output/rainfall_correlation_summary.csv"
+    },
+    {
+      "name": "climate_impact_analysis",
+      "path": "dashboards/powerbi_exports/output/climate_impact_analysis.csv"
+    },
+    {
+      "name": "kpis",
+      "path": "dashboards/powerbi_exports/output/kpis.csv"
+    },
+    {
+      "name": "agrix_powerbi_dataset",
+      "path": "dashboards/powerbi_exports/output/agrix_powerbi_dataset.parquet"
+    }
+  ],
+  "relationships": [
+    {
+      "left": "crop_productivity_trends.region_id",
+      "right": "climate_impact_analysis.region_id"
+    },
+    {
+      "left": "crop_productivity_trends.date",
+      "right": "climate_impact_analysis.date"
+    }
+  ]
+}

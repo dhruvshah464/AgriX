@@ -1,0 +1,5 @@
+Balanced NPK fertilization improves yield while reducing soil degradation risk.
+Irrigation scheduling should follow evapotranspiration and near-term rainfall forecasts.
+Persistently low NDVI signals crop stress and should trigger field inspection.
+Rice is generally suitable for high-rainfall, warm conditions with standing water availability.
+Wheat is better suited to cooler temperatures and moderate irrigation.

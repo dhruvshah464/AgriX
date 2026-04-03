@@ -1,0 +1,7 @@
+region_id,rainfall_yield_correlation,temperature_yield_correlation,observations
+bihar-north,1.0,1.0,2
+delhi-ncr,1.0,1.0,2
+haryana-west,1.0,1.0,2
+punjab-central,1.0,1.0,2
+up-east,1.0,1.0,2
+all-regions,0.7928,0.65,10

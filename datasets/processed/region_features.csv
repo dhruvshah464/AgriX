@@ -1,0 +1,6 @@
+region_id,avg_rainfall_mm,avg_temperature_c,avg_ndvi,soil_fertility_index
+delhi-ncr,126,25.6,0.54,0.61
+punjab-central,134,25.8,0.67,0.73
+haryana-west,95,24.2,0.49,0.58
+up-east,142,24.7,0.64,0.69
+bihar-north,150,25.1,0.66,0.71

@@ -1,0 +1,7 @@
+region_id,latitude,longitude,yield_tph,avg_ndvi
+delhi-ncr,28.63,77.21,3.9,0.56
+delhi-ncr,28.67,77.26,4.1,0.61
+punjab-central,30.90,75.85,4.4,0.68
+haryana-west,29.05,76.08,3.3,0.50
+up-east,26.85,80.95,4.3,0.65
+bihar-north,25.62,85.13,4.6,0.70
