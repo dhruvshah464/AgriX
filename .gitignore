@@ -42,3 +42,6 @@ __pycache__/
 *.njsproj
 *.sln
 *.sw?local_venv/
+*.dylib
+backend/local_venv/
+
