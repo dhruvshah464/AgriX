@@ -1,8 +1,11 @@
 import { createBrowserRouter } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
 import AppLayout from '../components/layout/AppLayout';
+import ProtectedRoute from '../components/layout/ProtectedRoute';
 
 // Lazy-loaded pages
+const LandingPage = lazy(() => import('../pages/LandingPage'));
+const LoginPage = lazy(() => import('../pages/LoginPage'));
 const DashboardPage = lazy(() => import('../pages/DashboardPage'));
 const FieldsPage = lazy(() => import('../pages/FieldsPage'));
 const TasksPage = lazy(() => import('../pages/TasksPage'));
@@ -34,21 +37,36 @@ function SuspenseWrapper({ children }) {
 
 export const router = createBrowserRouter([
   {
+    path: '/landing',
+    element: <SuspenseWrapper><LandingPage /></SuspenseWrapper>,
+    errorElement: <SuspenseWrapper><NotFoundPage /></SuspenseWrapper>,
+  },
+  {
+    path: '/login',
+    element: <SuspenseWrapper><LoginPage /></SuspenseWrapper>,
+    errorElement: <SuspenseWrapper><NotFoundPage /></SuspenseWrapper>,
+  },
+  {
     path: '/',
-    element: <AppLayout />,
+    element: <ProtectedRoute />,
     errorElement: <SuspenseWrapper><NotFoundPage /></SuspenseWrapper>,
     children: [
-      { index: true, element: <SuspenseWrapper><DashboardPage /></SuspenseWrapper> },
-      { path: 'fields', element: <SuspenseWrapper><FieldsPage /></SuspenseWrapper> },
-      { path: 'tasks', element: <SuspenseWrapper><TasksPage /></SuspenseWrapper> },
-      { path: 'equipment', element: <SuspenseWrapper><EquipmentPage /></SuspenseWrapper> },
-      { path: 'predict', element: <SuspenseWrapper><PredictionPage /></SuspenseWrapper> },
-      { path: 'forecast', element: <SuspenseWrapper><ForecastPage /></SuspenseWrapper> },
-      { path: 'maps', element: <SuspenseWrapper><MapInsightsPage /></SuspenseWrapper> },
-      { path: 'reports', element: <SuspenseWrapper><ReportsPage /></SuspenseWrapper> },
-      { path: 'assistant', element: <SuspenseWrapper><AssistantPage /></SuspenseWrapper> },
-      { path: 'settings', element: <SuspenseWrapper><SettingsPage /></SuspenseWrapper> },
-      { path: '*', element: <SuspenseWrapper><NotFoundPage /></SuspenseWrapper> },
+      {
+        element: <AppLayout />,
+        children: [
+          { index: true, element: <SuspenseWrapper><DashboardPage /></SuspenseWrapper> },
+          { path: 'fields', element: <SuspenseWrapper><FieldsPage /></SuspenseWrapper> },
+          { path: 'tasks', element: <SuspenseWrapper><TasksPage /></SuspenseWrapper> },
+          { path: 'equipment', element: <SuspenseWrapper><EquipmentPage /></SuspenseWrapper> },
+          { path: 'predict', element: <SuspenseWrapper><PredictionPage /></SuspenseWrapper> },
+          { path: 'forecast', element: <SuspenseWrapper><ForecastPage /></SuspenseWrapper> },
+          { path: 'maps', element: <SuspenseWrapper><MapInsightsPage /></SuspenseWrapper> },
+          { path: 'reports', element: <SuspenseWrapper><ReportsPage /></SuspenseWrapper> },
+          { path: 'assistant', element: <SuspenseWrapper><AssistantPage /></SuspenseWrapper> },
+          { path: 'settings', element: <SuspenseWrapper><SettingsPage /></SuspenseWrapper> },
+          { path: '*', element: <SuspenseWrapper><NotFoundPage /></SuspenseWrapper> },
+        ]
+      }
     ],
   },
 ]);

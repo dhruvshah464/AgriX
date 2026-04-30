@@ -23,6 +23,9 @@ class Settings(BaseSettings):
     LLM_MODEL: str = "gpt-4o-mini"
 
     MAPBOX_TOKEN: str | None = None
+    
+    SUPABASE_URL: str | None = None
+    SUPABASE_JWT_SECRET: str | None = None
 
     model_config = SettingsConfigDict(
         env_file=".env",

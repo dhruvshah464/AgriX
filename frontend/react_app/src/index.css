@@ -4,23 +4,23 @@
 
 /* ─── Design Tokens ─── */
 :root {
-  --color-primary: #16a34a;
-  --color-primary-light: #22c55e;
-  --color-primary-dark: #15803d;
-  --color-primary-50: #f0fdf4;
+  --color-primary: #10b981; /* Calming Emerald */
+  --color-primary-light: #34d399;
+  --color-primary-dark: #059669;
+  --color-primary-50: #ecfdf5;
   --color-surface: #ffffff;
-  --color-surface-secondary: #f8fafc;
+  --color-surface-secondary: #fcfcfd; /* Slightly warmer white for less eye strain */
   --color-surface-tertiary: #f1f5f9;
   --color-border: #e2e8f0;
-  --color-border-light: #f1f5f9;
+  --color-border-light: #f8fafc;
   --color-text-primary: #0f172a;
   --color-text-secondary: #475569;
   --color-text-tertiary: #94a3b8;
   --color-text-muted: #cbd5e1;
-  --color-success: #22c55e;
+  --color-success: #10b981;
   --color-warning: #f59e0b;
-  --color-danger: #f43f5e;
-  --color-info: #3b82f6;
+  --color-danger: #ef4444;
+  --color-info: #0ea5e9;
   --sidebar-width: 260px;
   --sidebar-collapsed: 72px;
   --topbar-height: 64px;
@@ -47,11 +47,12 @@
   body {
     margin: 0;
     padding: 0;
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     background: var(--color-surface-secondary);
     color: var(--color-text-primary);
     line-height: 1.6;
     min-height: 100vh;
+    font-size: 16px; /* Larger base font size for readability */
   }
 
   #root {
@@ -102,13 +103,13 @@
 @layer components {
   /* Cards */
   .card {
-    @apply bg-white rounded-xl border border-slate-100 shadow-card transition-all duration-200;
+    @apply bg-white/80 backdrop-blur-xl rounded-[24px] border border-white/60 shadow-lg shadow-slate-200/50 transition-all duration-300;
   }
   .card:hover {
-    @apply shadow-card-hover;
+    @apply shadow-xl shadow-slate-200/60 -translate-y-0.5;
   }
   .card-flat {
-    @apply bg-white rounded-xl border border-slate-100;
+    @apply bg-white rounded-[24px] border border-slate-100 shadow-sm;
   }
   .card-interactive {
     @apply card cursor-pointer;
@@ -119,17 +120,17 @@
 
   /* Buttons */
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 px-4 py-2.5 
-           bg-green-600 hover:bg-green-700 text-white text-sm font-medium 
-           rounded-lg transition-all duration-200 
-           active:scale-[0.97] disabled:opacity-50 disabled:cursor-not-allowed 
-           disabled:active:scale-100 shadow-sm hover:shadow-md;
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3.5 
+           bg-emerald-500 hover:bg-emerald-600 text-white text-base font-semibold 
+           rounded-2xl transition-all duration-300 
+           active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed 
+           shadow-lg shadow-emerald-500/20 hover:shadow-xl hover:shadow-emerald-500/30;
   }
   .btn-secondary {
-    @apply inline-flex items-center justify-center gap-2 px-4 py-2.5 
-           bg-white hover:bg-slate-50 text-slate-700 text-sm font-medium 
-           rounded-lg border border-slate-200 transition-all duration-200 
-           active:scale-[0.97] shadow-xs hover:shadow-sm;
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3.5 
+           bg-white/80 backdrop-blur-md hover:bg-white text-slate-700 text-base font-semibold 
+           rounded-2xl border border-slate-200 transition-all duration-300 
+           active:scale-[0.98] shadow-sm hover:shadow-md;
   }
   .btn-ghost {
     @apply inline-flex items-center justify-center gap-2 px-3 py-2 rounded-lg 
@@ -149,10 +150,10 @@
 
   /* Inputs */
   .input-field {
-    @apply w-full px-3.5 py-2.5 bg-white border border-slate-200 rounded-lg text-sm 
+    @apply w-full px-4 py-3.5 bg-white/80 backdrop-blur-sm border border-slate-200 rounded-2xl text-base 
            text-slate-800 placeholder:text-slate-400 
-           focus:outline-none focus:ring-2 focus:ring-green-500/20 focus:border-green-500 
-           transition-all duration-200;
+           focus:outline-none focus:ring-4 focus:ring-emerald-500/10 focus:border-emerald-500 
+           transition-all duration-300;
   }
   .input-search {
     @apply input-field pl-10;

@@ -1,9 +1,11 @@
-import { Search, Bell, Command } from 'lucide-react';
+import { Search, Bell, Command, LogOut } from 'lucide-react';
 import { useApp } from '../../context/AppContext';
+import { useAuth } from '../../context/AuthContext';
 import Avatar from '../ui/Avatar';
 
 export default function TopBar() {
-  const { user, openCommandPalette, toggleNotifications, unreadCount } = useApp();
+  const { openCommandPalette, toggleNotifications, unreadCount } = useApp();
+  const { user, signOut } = useAuth();
 
   const now = new Date();
   const hour = now.getHours();
@@ -18,7 +20,7 @@ export default function TopBar() {
       {/* Left: Greeting */}
       <div>
         <h2 className="text-sm font-semibold text-slate-800">
-          {greeting}, <span className="text-green-700">{user.name.split(' ')[0]}</span>
+          {greeting}, <span className="text-emerald-700">{user?.email?.split('@')[0] || 'User'}</span>
         </h2>
         <p className="text-xs text-slate-400 mt-0.5">{dateStr}</p>
       </div>
@@ -50,9 +52,16 @@ export default function TopBar() {
           {unreadCount > 0 && <span className="notification-dot" />}
         </button>
 
-        {/* User Avatar */}
-        <div className="ml-1">
-          <Avatar name={user.name} size="md" color="green" />
+        {/* User Avatar & Logout */}
+        <div className="ml-1 flex items-center gap-3">
+          <Avatar name={user?.email || 'User'} size="md" color="emerald" />
+          <button 
+            onClick={signOut}
+            className="text-slate-400 hover:text-slate-600 transition-colors p-1"
+            title="Sign out"
+          >
+            <LogOut size={18} />
+          </button>
         </div>
       </div>
     </header>

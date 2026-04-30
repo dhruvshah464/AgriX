@@ -25,7 +25,7 @@ langchain-community==0.3.3
 langchain-huggingface==0.1.2
 langchain-openai==0.2.8
 sentence-transformers==3.2.1
-faiss-cpu==1.9.0
+faiss-cpu==1.13.2
 openai>=1.54.0,<2.0.0
 
 python-dotenv==1.0.1
