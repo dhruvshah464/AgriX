@@ -6,10 +6,13 @@ from backend.app.main import app
 
 client = TestClient(app)
 
+AUTH_HEADERS = {"Authorization": "Bearer fake-dev-token"}
+
 
 def test_crop_yield_prediction_endpoint() -> None:
     response = client.post(
         "/api/v1/predictions/yield",
+        headers=AUTH_HEADERS,
         json={
             "farm_id": "farm-100",
             "season": "kharif-2026",
@@ -30,6 +33,7 @@ def test_crop_yield_prediction_endpoint() -> None:
 def test_crop_recommendation_endpoint() -> None:
     response = client.post(
         "/api/v1/predictions/recommendation",
+        headers=AUTH_HEADERS,
         json={
             "rainfall_mm": 180,
             "temperature_c": 29.5,
@@ -52,6 +56,7 @@ def test_ndvi_analysis_endpoint(monkeypatch) -> None:
     monkeypatch.setattr("backend.app.services.satellite_service.compute_ndvi_stats", _mock_stats)
     response = client.post(
         "/api/v1/satellite/ndvi",
+        headers=AUTH_HEADERS,
         json={
             "region_id": "delhi-ncr",
             "red_band_path": "/tmp/red.tif",
@@ -69,6 +74,7 @@ def test_ndvi_analysis_endpoint(monkeypatch) -> None:
 def test_climate_forecast_endpoint() -> None:
     response = client.post(
         "/api/v1/climate/forecast",
+        headers=AUTH_HEADERS,
         json={"region_id": "delhi-ncr", "horizon_days": 5},
     )
     assert response.status_code == 200
@@ -82,6 +88,7 @@ def test_climate_forecast_endpoint() -> None:
 def test_ai_assistant_query_endpoint() -> None:
     response = client.post(
         "/api/v1/assistant/query",
+        headers=AUTH_HEADERS,
         json={"query": "How to improve wheat yield in low rainfall conditions?"},
     )
     assert response.status_code == 200
