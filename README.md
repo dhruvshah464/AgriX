@@ -1,97 +1,92 @@
-# <div align="center"><img src="https://raw.githubusercontent.com/lucide-react/lucide/main/icons/leaf.svg" width="48" height="48" /> <br/> AgriX Intelligence Platform</div>
-
 <div align="center">
-  <h3>Next-Generation AI for Precision Agriculture</h3>
-  <p>A production-ready SaaS ecosystem transforming raw agricultural data into actionable intelligence.</p>
 
-  [![Vite](https://img.shields.io/badge/Frontend-Vite%20%2B%20React-646CFF?style=for-the-badge&logo=vite)](https://vitejs.dev/)
-  [![TailwindCSS](https://img.shields.io/badge/Styling-TailwindCSS-38B2AC?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
-  [![FastAPI](https://img.shields.io/badge/Backend-FastAPI-009688?style=for-the-badge&logo=fastapi)](https://fastapi.tiangolo.com/)
-  [![Python](https://img.shields.io/badge/ML-Python%203.9%2B-3776AB?style=for-the-badge&logo=python)](https://www.python.org/)
+<img src="https://img.shields.io/badge/AgriX-OS%202.0-10b981?style=for-the-badge&logo=react&logoColor=white" />
+<img src="https://img.shields.io/badge/FastAPI-Backend-009688?style=for-the-badge&logo=fastapi&logoColor=white" />
+<img src="https://img.shields.io/badge/Groq-AI%20Inference-f55036?style=for-the-badge&logo=groq&logoColor=white" />
+<img src="https://img.shields.io/badge/Supabase-Auth-3ecf8e?style=for-the-badge&logo=supabase&logoColor=white" />
+
+<br />
+<br />
+
+# 🌍 AgriX Intelligence Platform
+### *The unified operating system for global agriculture.*
+
+**AgriX** is an elite, production-grade SaaS platform designed to bring trillion-dollar technical infrastructure to precision agriculture. Harnessing the power of ultra-fast LLM inference, geospatial data mapping, and predictive machine learning, AgriX allows modern agricultural enterprises to manage millions of acres from a single, stunning, Apple-inspired interface.
+
+---
+
 </div>
 
----
+## 🚀 The Vision
 
-## 🛰️ System Overview
+Agriculture is the backbone of human civilization, yet it operates largely on legacy software. **AgriX OS 2.0** completely re-imagines farm management. By combining a **vibrant, glassmorphic UI** with **deep ML analytics**, we bridge the gap between heavy data science and intuitive user experience. 
 
-**AgriX** is an end-to-end intelligence platform that integrates satellite telemetry, weather forecasting, and machine learning to optimize global crop yields. Built with a focus on **visual excellence** and **data precision**, it provides a world-class experience for modern agronomists.
+Whether you are plotting sub-meter resolution NDVI heatmaps or asking our RAG-powered Agronomy AI about soil nitrogen depletion, AgriX responds instantaneously.
 
-### 💎 Key Visual Pillars
-- **Apple-Inspired Aesthetic:** Clean, light-minimal interface with glassmorphism and subtle micro-animations.
-- **Data-First Design:** Interactive Recharts & Mapbox GL JS visualizations.
-- **Intelligent Navigation:** Cmd+K Command Palette for lightning-fast workflow transitions.
+## ⚡ Core Systems Architecture
 
----
+AgriX is engineered on a modern, decoupled stack built for extreme performance and instantaneous reactivity.
 
-## 🎨 Professional Dashboard
-
-The heart of AgriX is a multi-layered dashboard designed for high-density information clarity.
-
-![Dashboard Preview](file:///Users/shahdhruv/.gemini/antigravity/brain/e8030c43-62d3-4672-a8bc-480fc8f65667/dashboard_verification_1775223277837.png)
-
-### 📊 Core Modules
-
-| Module | Description | Technologies |
+| Layer | Technologies | Purpose |
 | :--- | :--- | :--- |
-| **Yield Lab** | ML-driven yield prediction & crop optimization. | Scikit-learn, XGBoost |
-| **Geospatial** | Satellite NDVI analysis & productivity heatmaps. | Mapbox GL, GeoPandas |
-| **AI Assistant** | RAG-powered agronomy knowledge engine. | LangChain, FAISS |
-| **Climate Hub** | High-precision weather impact forecasting. | ARIMA, Prophet |
-| **Asset Manager** | Real-time fleet & task tracking. | React State Management |
+| **Frontend UI** | React, Vite, Framer Motion, TailwindCSS, Recharts | Provides the cinematic 3D parallax landing page, bento-box dashboard layouts, and complex interactive charts. |
+| **API Gateway** | FastAPI, Python 3.12, Uvicorn | High-performance asynchronous backend handling REST routes, ML inference pipelines, and token validation. |
+| **AI & ML Engine** | Groq (`llama-3.1-8b-instant`), LangChain, FAISS | Blazing-fast conversational RAG assistant processing vast agronomy datasets with sub-second latency. |
+| **Data & Auth** | PostgreSQL, Supabase Auth | Secure, magic-link and JWT-based authentication coupled with robust relational data storage. |
+| **Geospatial** | Mapbox GL JS, GeoJSON | Real-time rendering of satellite-powered productivity and crop-health heatmaps. |
 
----
+## 🧬 Key Features
 
-## 🏗️ Architecture
+### 1. **Interactive 3D Parallax Interface**
+The entry point to AgriX isn't a static webpage—it's an interactive experience. Powered by `framer-motion` springs, the dashboard mockup tracks mouse movements, tilting in 3D space. The UI utilizes strict Apple-level design tokens, emerald gradients, and `backdrop-blur-xl` glassmorphism to establish immediate psychological trust.
 
-```mermaid
-graph TD
-    A[Frontend: Vite/React] -->|API Requests| B[Backend: FastAPI]
-    B --> C[PostgreSQL / TimeScaleDB]
-    B --> D[ML Inference Engine]
-    B --> E[RAG / Vector Store]
-    D --> F[Satellite & Sensor Data]
-    E --> G[Knowledge Base]
-    A -->|Cmd+K| H[Command Palette]
-    A -->|Maps| I[Mapbox GL JS]
-```
+### 2. **Agronomy AI Engine (Powered by Groq)**
+Talk directly to your data. The RAG assistant queries scientific agronomy datasets and your live telemetry simultaneously. By leveraging the **Groq API**, the assistant circumvents traditional LLM bottlenecks, providing near-instantaneous `llama-3.1` inference. *(Includes an Offline Demo Cache fallback for resilient operation during quota limits).*
 
----
+### 3. **Geospatial Intelligence**
+Sub-meter resolution satellite imagery processed on the backend into dynamic GeoJSON payloads. The frontend utilizes Mapbox to render live NDVI (Normalized Difference Vegetation Index) health indices, rainfall heatmaps, and yield productivity circles.
 
-## 🚀 Advanced Features
+### 4. **Actuarial Risk & Insurance Dashboard**
+A sophisticated financial module featuring live AI Risk Analysis. Actuarial models project drought, pest, and flood probabilities across a 6-month timeline, visualizing the risk through multi-layered `recharts` Area gradients, alongside active multi-peril crop insurance policy tracking.
 
-### 🌾 Field & Crop Intelligence
-Dynamic field cards provide real-time telemetry including soil moisture, NDVI health indices, and harvest countdowns.
-![Fields View](file:///Users/shahdhruv/.gemini/antigravity/brain/e8030c43-62d3-4672-a8bc-480fc8f65667/my_fields_page_1775223331101.png)
+### 5. **Predictive Yield Lab**
+Machine learning models ingest millions of data points (soil pH, nitrogen, temperature) to predict harvest outcomes with extreme accuracy. When deep models are untrainable locally, the system seamlessly falls back to advanced deterministic heuristics so the operator never sees a crash.
 
-### 🤖 RAG-Powered AI Assistant
-Get expert agronomic advice instantly. Our AI parses through scientific datasets to provide contextualized answers for pest control, fertilization, and growth optimization.
-![AI Assistant](file:///Users/shahdhruv/.gemini/antigravity/brain/e8030c43-62d3-4672-a8bc-480fc8f65667/ai_assistant_page_1775223376376.png)
+## 🔐 Security & Authentication
 
-### 📈 Financial & Predictive Analytics
-Track seasonal ROI, revenue vs. expenses, and yield trends with production-grade data visualizations.
-![Reports View](file:///Users/shahdhruv/.gemini/antigravity/brain/e8030c43-62d3-4672-a8bc-480fc8f65667/reports_page_1775223363929.png)
+AgriX relies on an impenetrable **Supabase JWT architecture**.
+- **Dual-Mode Login**: Users can securely access the platform via Passwordless Magic Links or standard Email/Password combinations (bypassing free-tier email rate limits).
+- **Protected Routes**: The React router strictly gates the dashboard. Unauthenticated users cannot bypass the `AuthContext` wrapper.
+- **Backend Verification**: The FastAPI backend employs a strict dependency injection (`get_current_user`) that verifies the `Authorization: Bearer <token>` against the Supabase HS256 JWT secret before any AI or ML endpoint is triggered. *(Dev-mode bypass enabled for rapid local testing).*
 
----
+## 💻 Local Development Setup
 
-## 🛠️ Performance Features
-- **HSL Design System:** Centralized color tokens for consistent styling.
-- **Lazy Loading:** All pages are chunked and loaded on-demand for instant FCP.
-- **Skeleton States:** Smooth loading transitions for all data-heavy widgets.
-- **Error Boundaries:** Resilient UI that recovers gracefully from segment-level failures.
+To run the complete project locally:
 
----
-
-## 📡 Deployment & Scale
-The system is containerized for cloud-scale deployment using **Docker Compose**.
-
+**1. Clone the repository**
 ```bash
-# Spin up the entire intelligence stack
-cd docker
-docker compose up --build -d
+git clone https://github.com/dhruvshah464/agriX.git
+cd agriX
 ```
 
----
+**2. Start the FastAPI Backend**
+```bash
+source backend/local_venv/bin/activate
+export PYTHONPATH=$PYTHONPATH:.
+python -m uvicorn backend.main:app --host 0.0.0.0 --port 8001 --reload
+```
 
+**3. Start the React Frontend**
+```bash
+cd frontend/react_app
+npm install
+npm run dev
+```
+
+**4. Environment Variables**
+Ensure you have the `.env` file loaded in both the root directory and the frontend directory containing your `VITE_MAPBOX_TOKEN`, `GROQ_API_KEY`, and `SUPABASE` credentials.
+
+---
 <div align="center">
-  <p>© 2026 AgriX Intelligence. Built for the future of food security.</p>
+  <p><b>Designed and Engineered for the Future of Farming.</b></p>
 </div>
